@@ -67,4 +67,63 @@ console.log('Result from adding properties using dot notation:');
 console.log(car);
 
 car['manufacture date'] = 2019;
+console.log(car['manufacture date']);
+console.log(car['Manufacture Date']);
+console.log(car.manufactureDate);
 console.log(car);
+
+//Deleting object properties
+delete car['manufacture date'];
+console.log('Result from deleting properties: ');
+console.log(car);
+
+//Reassigning object properties
+car.name = 'E46 BMW M3 GTR';
+console.log('Result from reassigning properties: ');
+console.log(car);
+
+//Object Method
+//Method is a function which is a property of an object
+
+let person = {
+	name: 'John',
+	talk: function(){
+		console.log('Hello my name is ' + this.name);
+	}
+}
+
+console.log(person);
+console.log('Result from object methods: ');
+person.talk();
+
+//Adding methods to objects
+person.walk = function(){
+	console.log(this.name + ' walked 25 steps forward.')
+}
+
+person.walk();
+
+//Add a run method to the person object
+person.run = function(){
+	console.log(this.name + ' did not run because he was lazy.');
+}
+person.run();
+
+// Creating reusable functions
+let friend = {
+	firstName: 'Joe',
+	lastName: 'Smith',
+	address: {
+		city: 'Austin',
+		country: 'Texas'
+	},
+	emails: ['joe@mail.com', 'joesmith@email.xyz'],
+	introduce: function(){
+		console.log('Hello my name is ' + this.firstName + ' ' + this.lastName);
+	}
+}
+
+friend.introduce();
+console.log(friend.address.city);
+console.log(friend.address);
+console.log(friend.emails[1]);
